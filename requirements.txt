@@ -1,0 +1,7 @@
+# On Arch Linux ARM, install inside a venv (PEP 668 blocks system pip):
+#   python -m venv ~/venv && source ~/venv/bin/activate && pip install -r requirements.txt
+python-can
+numpy
+pandas
+scikit-learn
+joblib

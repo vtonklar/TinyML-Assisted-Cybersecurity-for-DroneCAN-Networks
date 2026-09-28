@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
+*.log
+.ipynb_checkpoints/
+# large external dataset downloads land here (never committed)
+data/external/
