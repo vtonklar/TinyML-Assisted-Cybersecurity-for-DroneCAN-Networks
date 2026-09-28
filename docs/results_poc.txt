@@ -1,0 +1,16 @@
+========================================================================================
+DEFENSE PoC SCORECARD   (offline, recorded traffic)
+model: model_window_drift.pkl  (trained: benign + spike + drift - shadow/trojan/replay are UNSEEN)
+scenario         tier result                                       latency
+----------------------------------------------------------------------------------------
+0 benign         -    0 FALSE ALARMS / ~299 honest windows         -
+1 injection      T1   20/20 attack frames DROPPED (allowlist)      per frame
+2 flood 1 kHz    T1   1000/1000 spam DROPPED (rate limit) + 49 honest lost per frame
+3 masquerade     T2   33/34 windows ALERT                          ~27 ms (1 window)
+4 drift +2m/s    T2   34/34 windows ALERT                          ~49 ms (1 window)
+5 shadow         T2   34/34 windows ALERT                          ~104 ms (1 window)
+6 replay         T2   2/34 windows ALERT (seams; middle passes = named ceiling) ~26 ms (1 window)
+7 trojan OTA     T2   trigger: 1/1 DROPPED (allowlist); sink: 36/44 windows ALERT ~110 ms (1 window)
+----------------------------------------------------------------------------------------
+honest windows passed: 367   |   TRUE false alarms (no attack content in window): 0
+========================================================================================
